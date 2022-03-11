@@ -1,0 +1,55 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+img {
+    width: 30%;
+    margin-right: 15px;
+}
+
+img:nth-of-type(1) {
+    margin-bottom: 15px;
+}
+
+.path-inset {
+    /* use webkit in case some browsers does not support see https://caniuse.com/  and search for clip-path  */
+    -webkit-clip-path: inset(10px 20px 30px 40px round 0px 50% 0 50%);
+    clip-path: inset(10px 20px 30px 40px round 0px 50% 0 50%);
+    /*inset(<top> <right> <bottom> <left> round <top-radius> <right-radius> <bottom-radius> <left-radius>) */
+    /* Also can take single values to make all sides the same, or 2 values (vert/horz), or 3 values (top/horz/bottom). */
+}
+
+.path-circle-1 {
+    /*circle(radius at  center || left ||  right || top || bottom)*/
+    -webkit-clip-path: circle(30% at center);
+    clip-path: circle(30% at center);
+}
+
+.path-circle-2 {
+    /* Circle: circle(radius at x-axis y-axis)*/
+    -webkit-clip-path: circle(30% at 0% 50%);
+    clip-path: circle(30% at 0% 50%);
+}
+
+.path-ellipse {
+    /* Ellipse: ellipse(radius-x, radius-y at x, y) */
+    -webkit-clip-path: ellipse(500px 50px at 50% 50%);
+    clip-path: ellipse(500px 50px at 50% 0);
+}
+
+.path-polygon {
+    transition: all 0.5s;
+    /*Polygon:polygon(x-axisy-axis,x-axisy-axis,…)*/
+    -webkit-clip-path: polygon( 20% 0%, 0% 0%, 0% 50%, 0% 80%, 0% 100%, 50% 100%, 80% 100%, 100% 100%, 100% 50%, 100% 0, 80% 0, 50% 0);
+    clip-path: polygon( 20% 0%, 0% 0%, 0% 50%, 0% 80%, 0% 100%, 50% 100%, 80% 100%, 100% 100%, 100% 50%, 100% 0, 80% 0, 50% 0);
+}
+
+.path-polygon:hover {
+    -webkit-clip-path: polygon( 20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+    clip-path: polygon( 20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+}
+
+.path-polygon-1 {
+    clip-path: polygon();
+}
