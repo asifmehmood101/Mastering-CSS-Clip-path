@@ -6,9 +6,6 @@
 img {
     width: 30%;
     margin-right: 15px;
-}
-
-img:nth-of-type(1) {
     margin-bottom: 15px;
 }
 
@@ -38,6 +35,19 @@ img:nth-of-type(1) {
     clip-path: ellipse(500px 50px at 50% 0);
 }
 
+
+/* important note
+
+How Do I Create a Clip-Path Polygon?
+
+-The clip path is a series of coordinate pairs, each pair separated by commas.  It took me awhile to get my head around it, and this is how I envision it.
+Coordinates are grouped as X Y pairs where X is horizontal axis and Y the vertical axis
+
+- Starting at the upper right corner,
+
+
+*/
+
 .path-polygon {
     transition: all 0.5s;
     /*Polygon:polygon(x-axisy-axis,x-axisy-axis,…)*/
@@ -50,6 +60,38 @@ img:nth-of-type(1) {
     clip-path: polygon( 20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
 }
 
-.path-polygon-1 {
-    clip-path: polygon();
+.path-polygon-Triangle {
+    clip-path: polygon(50% 0, 0 100%, 100% 100%);
+}
+
+.path-polygon-slice {
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+}
+
+.path-polygon-trapezoid {
+    clip-path: polygon(20% 0, 80% 0, 100% 100%, 0 100%);
+}
+
+.path-polygon-parallelogram {
+    clip-path: polygon(40% 0, 100% 0, 60% 100%, 0 100%);
+}
+
+.path-polygon-rhombus {
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+
+.path-polygon-pentagon {
+    clip-path: polygon(50% 0, 100% 40%, 80% 100%, 20% 100%, 0 40%);
+}
+
+.path-polygon-message {
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 80% 80%, 80% 100%, 50% 80%, 0 80%);
+}
+
+.path-polygon-left-arrow {
+    clip-path: polygon(25% 0, 100% 0, 75% 50%, 100% 100%, 25% 100%, 0 50%);
+}
+
+.path-polygon-right-arrow {
+    clip-path: polygon(0 0, 75% 0, 100% 50%, 75% 100%, 0 100%, 20% 50%);
 }
